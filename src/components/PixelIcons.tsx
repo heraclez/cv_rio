@@ -365,3 +365,26 @@ export const InfoIcon: React.FC<IconProps> = ({ size = 16, className = "", ...pr
     <rect x="6" y="11" width="4" height="1" fill="#FFFFFF" />
   </svg>
 );
+
+export const PhotoFileIcon: React.FC<IconProps> = ({ size = 32, className = "", ...props }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 32 32"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    shapeRendering="crispEdges"
+    className={className}
+    {...props}
+  >
+    {/* Picture frame */}
+    <rect x="3" y="5" width="26" height="22" fill="#FFFFFF" stroke="#000000" strokeWidth="1" />
+    <rect x="5" y="7" width="22" height="18" fill="#55AAFF" />
+    {/* Sun */}
+    <rect x="21" y="9" width="4" height="4" fill="#FFFF00" />
+    {/* Hills */}
+    <path d="M5 25V19L11 14L16 19L20 16L27 22V25H5Z" fill="#00AA00" />
+    <path d="M11 14L16 19H6L11 14Z" fill="#FFFFFF" />
+    <rect x="5" y="23" width="22" height="2" fill="#006600" />
+  </svg>
+);

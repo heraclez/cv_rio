@@ -18,7 +18,11 @@ import {
   RecycleBinIcon,
   SettingsIcon,
   ShutdownIcon,
+  PhotoFileIcon,
 } from "@/components/PixelIcons";
+import { ProfileWidget } from "@/components/ProfileWidget";
+import { PhotoWindow } from "@/components/windows/PhotoWindow";
+import { cvData } from "@/data/cvData";
 
 import { AboutWindow } from "@/components/windows/AboutWindow";
 import { ResumeWindow } from "@/components/windows/ResumeWindow";
@@ -111,6 +115,16 @@ export const Desktop: React.FC = () => {
       isMaximized: false,
       zIndex: 90,
       position: { x: 140, y: 100 },
+    },
+    {
+      id: "photo",
+      title: `${cvData.personal.fullPhotoFileName} — Penampil Gambar`,
+      icon: <PhotoFileIcon size={16} />,
+      isOpen: false,
+      isMinimized: false,
+      isMaximized: false,
+      zIndex: 90,
+      position: { x: 160, y: 30 },
     },
     {
       id: "settings",
@@ -269,6 +283,11 @@ export const Desktop: React.FC = () => {
       icon: <DownloadFloppyIcon size={36} />,
     },
     {
+      id: "photo",
+      title: cvData.personal.fullPhotoFileName,
+      icon: <PhotoFileIcon size={36} />,
+    },
+    {
       id: "recycle-bin",
       title: "Recycle Bin",
       icon: <RecycleBinIcon size={36} />,
@@ -314,35 +333,34 @@ export const Desktop: React.FC = () => {
         crtEnabled ? "crt-overlay" : ""
       }`}
     >
-      {/* Desktop Watermark Banner */}
-      <div className="absolute top-3 right-4 text-right pointer-events-none select-none opacity-40">
-        <div className="text-white font-serif font-black text-xl tracking-wider drop-shadow-md">
-          Windows<span className="font-sans text-sm ml-1 font-bold">98</span>
-        </div>
-        <div className="text-white font-sans text-[11px] drop-shadow-sm">
-          Reunard Rio E.K — Personal Desktop
-        </div>
-      </div>
+      {/* Lapisan desktop (di bawah jendela): widget profil + shortcut.
+          Mobile: mengalir vertikal dan bisa di-scroll di atas taskbar.
+          Desktop (md+): widget di kanan atas, ikon di kiri. */}
+      <div className="absolute inset-x-0 top-0 bottom-[38px] overflow-y-auto md:overflow-hidden z-[1]">
+        <div className="flex flex-col md:block">
+          <ProfileWidget className="mx-3 mt-3 md:absolute md:top-5 md:right-8 md:mx-0 md:mt-0" />
 
-      {/* Desktop Shortcuts Grid */}
-      <div className="p-3 flex flex-col flex-wrap gap-4 items-start max-h-[calc(100vh-60px)] z-10 w-fit">
-        {desktopIcons.map((item) => (
-          <DesktopIcon
-            key={item.id}
-            id={item.id}
-            title={item.title}
-            icon={item.icon}
-            isSelected={selectedIconId === item.id}
-            onSelect={() => setSelectedIconId(item.id)}
-            onOpen={() => {
-              if (item.isSpecial) {
-                alert("Recycle Bin is currently empty. Rio writes clean, bug-free code!");
-              } else {
-                openWindow(item.id);
-              }
-            }}
-          />
-        ))}
+          {/* Desktop Shortcuts Grid */}
+          <div className="p-3 flex flex-row flex-wrap items-start gap-2 md:flex-col md:gap-4 md:max-h-[calc(100vh-60px)] md:w-fit">
+            {desktopIcons.map((item) => (
+              <DesktopIcon
+                key={item.id}
+                id={item.id}
+                title={item.title}
+                icon={item.icon}
+                isSelected={selectedIconId === item.id}
+                onSelect={() => setSelectedIconId(item.id)}
+                onOpen={() => {
+                  if (item.isSpecial) {
+                    alert("Recycle Bin is currently empty. Rio writes clean, bug-free code!");
+                  } else {
+                    openWindow(item.id);
+                  }
+                }}
+              />
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* Floating Windows Area */}
@@ -368,6 +386,7 @@ export const Desktop: React.FC = () => {
           {win.id === "download" && (
             <DownloadWindow onClose={() => closeWindow("download")} />
           )}
+          {win.id === "photo" && <PhotoWindow />}
           {win.id === "settings" && (
             <SettingsWindow
               soundEnabled={soundEnabled}

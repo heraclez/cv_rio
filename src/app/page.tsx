@@ -18,7 +18,6 @@ export default function Home() {
           <p>Email: {personal.email}</p>
           <p>Telepon: {personal.phone}</p>
           <p>{personal.summaryId}</p>
-          <p>{personal.summaryEn}</p>
         </header>
 
         <section>

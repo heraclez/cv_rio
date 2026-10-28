@@ -11,42 +11,25 @@ interface DesktopIconProps {
 }
 
 export const DesktopIcon: React.FC<DesktopIconProps> = ({
-  id,
   title,
   icon,
   isSelected,
   onSelect,
   onOpen,
 }) => {
+  // Satu klik/tap membuka shortcut (juga berlaku untuk Enter/Space via button native).
   const handleClick = (e: React.MouseEvent) => {
     e.stopPropagation();
-    sounds.playClick();
-    onSelect();
-  };
-
-  const handleDoubleClick = (e: React.MouseEvent) => {
-    e.stopPropagation();
     sounds.playWindowOpen();
+    onSelect();
     onOpen();
-  };
-
-  // Keyboard accessibility
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      sounds.playWindowOpen();
-      onOpen();
-    }
   };
 
   return (
     <button
       onClick={handleClick}
-      onDoubleClick={handleDoubleClick}
-      onKeyDown={handleKeyDown}
       className={`win98-desktop-icon group ${isSelected ? "selected" : ""}`}
-      tabIndex={0}
-      aria-label={`Open ${title}`}
+      aria-label={`Buka ${title}`}
       type="button"
     >
       <div className="w-10 h-10 flex items-center justify-center transform group-active:translate-y-0.5">

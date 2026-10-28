@@ -67,6 +67,8 @@ export interface CVData {
     githubUrl: string;
     avatarUrl: string;
     fullPhotoUrl: string;
+    fullPhotoFileName: string;
+    highlightSkills: string[];
     pdfDownloadUrl: string;
     summaryEn: string;
     summaryId: string;
@@ -89,7 +91,15 @@ export const cvData: CVData = {
     whatsappUrl: "https://wa.me/6285179681152",
     githubUrl: "https://github.com/heraclez",
     avatarUrl: "/rio-avatar.png",
-    fullPhotoUrl: "/rio-photo.png",
+    fullPhotoUrl: "/foto-profil.jpg",
+    fullPhotoFileName: "Foto Profil.jpg",
+    highlightSkills: [
+      "PHP & CodeIgniter",
+      "Web Core Banking (backend)",
+      "MySQL & PostgreSQL",
+      "Linux Ubuntu & CentOS",
+      "IT Support",
+    ],
     pdfDownloadUrl: "/cv-reunard-rio.pdf",
     summaryEn:
       "I have two years of experience as a web core banking developer specializing in the back end. For the past year, I have been working as IT support. I am proficient in using Linux (Ubuntu and CentOS) and have the ability to work effectively in a team.",

@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Windows 98 Retro Design System */
 
 :root {
@@ -255,4 +259,65 @@ body {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Conky-style profile widget: transparan, monospace, satu aksen kuning pucat */
+.conky-widget {
+  --conky-accent: #ffff80;
+  width: 100%;
+  max-width: 320px;
+  padding: 4px 12px;
+  font-family: ui-monospace, "Cascadia Mono", Consolas, "Courier New", monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #ffffff;
+  background: transparent;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+.conky-name {
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--conky-accent);
+}
+
+.conky-role {
+  color: #ffffff;
+}
+
+.conky-rule {
+  border: 0;
+  border-top: 1px dashed rgba(255, 255, 255, 0.55);
+  margin: 6px 0;
+}
+
+.conky-row {
+  display: grid;
+  grid-template-columns: 7ch 1fr;
+  column-gap: 1ch;
+}
+
+.conky-row dt,
+.conky-label {
+  color: var(--conky-accent);
+}
+
+.conky-list {
+  list-style: none;
+}
+
+.conky-list li::before {
+  content: "> ";
+  color: var(--conky-accent);
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }

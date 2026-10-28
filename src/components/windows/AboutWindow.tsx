@@ -40,21 +40,6 @@ export const AboutWindow: React.FC<AboutWindowProps> = ({ onOpenWindow }) => {
           <p className="text-[11px] text-[#606060] mb-2 flex items-center justify-center sm:justify-start gap-1">
             <span>📍</span> {personal.location}
           </p>
-
-          <div className="flex flex-wrap gap-1.5 justify-center sm:justify-start text-[11px]">
-            <span className="px-1.5 py-0.5 win98-bevel-out bg-[#dfdfdf]">
-              PHP & CI
-            </span>
-            <span className="px-1.5 py-0.5 win98-bevel-out bg-[#dfdfdf]">
-              Core Banking
-            </span>
-            <span className="px-1.5 py-0.5 win98-bevel-out bg-[#dfdfdf]">
-              MySQL & Postgres
-            </span>
-            <span className="px-1.5 py-0.5 win98-bevel-out bg-[#dfdfdf]">
-              Linux Ubuntu/CentOS
-            </span>
-          </div>
         </div>
       </div>
 
@@ -63,11 +48,8 @@ export const AboutWindow: React.FC<AboutWindowProps> = ({ onOpenWindow }) => {
         <legend className="px-1 font-bold text-[12px] text-[#000080]">
           Ringkasan Profesional
         </legend>
-        <p className="text-[12px] leading-relaxed mb-2 text-black">
+        <p className="text-[12px] leading-relaxed text-black">
           {personal.summaryId}
-        </p>
-        <p className="text-[11px] text-[#404040] italic leading-normal border-t border-[#808080] pt-2">
-          &ldquo;{personal.summaryEn}&rdquo;
         </p>
       </fieldset>
 
