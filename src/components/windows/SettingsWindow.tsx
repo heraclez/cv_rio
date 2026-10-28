@@ -107,7 +107,7 @@ export const SettingsWindow: React.FC<SettingsWindowProps> = ({
 
       <div className="mt-2 win98-bevel-in-gray p-1 text-[11px] text-[#333333] flex justify-between">
         <span>Settings Panel</span>
-        <span>Antigravity &bull; Rio Windows 98</span>
+        <span>Windows 98 &bull; Personal Desktop</span>
       </div>
     </div>
   );
