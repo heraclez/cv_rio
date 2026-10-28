@@ -1,0 +1,258 @@
+/* Windows 98 Retro Design System */
+
+:root {
+  --win-desktop: #008080;
+  --win-gray: #c0c0c0;
+  --win-light: #ffffff;
+  --win-border-light: #dfdfdf;
+  --win-shadow: #808080;
+  --win-dark: #000000;
+  --win-navy: #000080;
+  --win-navy-gradient: linear-gradient(90deg, #000080 0%, #1084d0 100%);
+  --win-inactive-gradient: linear-gradient(90deg, #808080 0%, #b5b5b5 100%);
+  --win-selection: #000080;
+  --win-selection-text: #ffffff;
+  --font-win: "Segoe UI", Tahoma, "MS Sans Serif", Geneva, sans-serif;
+  --font-mono: "Consolas", "Courier New", monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--win-desktop);
+  font-family: var(--font-win);
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--win-dark);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Allow text selection inside document & content areas */
+.selectable-text,
+.selectable-text * {
+  user-select: text !important;
+  -webkit-user-select: text !important;
+}
+
+/* 3D Bevel Utilities */
+.win98-window-frame {
+  background-color: var(--win-gray);
+  box-shadow: inset 1px 1px 0px #ffffff,
+              inset -1px -1px 0px #000000,
+              inset 2px 2px 0px #dfdfdf,
+              inset -2px -2px 0px #808080;
+  padding: 3px;
+}
+
+.win98-bevel-out {
+  background-color: var(--win-gray);
+  box-shadow: inset 1px 1px 0px #ffffff,
+              inset -1px -1px 0px #000000,
+              inset 2px 2px 0px #dfdfdf,
+              inset -2px -2px 0px #808080;
+}
+
+.win98-bevel-in {
+  background-color: #ffffff;
+  box-shadow: inset 1px 1px 0px #808080,
+              inset -1px -1px 0px #ffffff,
+              inset 2px 2px 0px #000000,
+              inset -2px -2px 0px #dfdfdf;
+}
+
+.win98-bevel-in-gray {
+  background-color: var(--win-gray);
+  box-shadow: inset 1px 1px 0px #808080,
+              inset -1px -1px 0px #ffffff,
+              inset 2px 2px 0px #000000,
+              inset -2px -2px 0px #dfdfdf;
+}
+
+.win98-bevel-thin-out {
+  box-shadow: inset 1px 1px 0px #ffffff,
+              inset -1px -1px 0px #808080;
+}
+
+.win98-bevel-thin-in {
+  box-shadow: inset 1px 1px 0px #808080,
+              inset -1px -1px 0px #ffffff;
+}
+
+/* Buttons */
+.win98-btn {
+  background-color: var(--win-gray);
+  border: none;
+  font-family: var(--font-win);
+  font-size: 12px;
+  font-weight: 500;
+  color: #000000;
+  padding: 4px 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: inset 1px 1px 0px #ffffff,
+              inset -1px -1px 0px #000000,
+              inset 2px 2px 0px #dfdfdf,
+              inset -2px -2px 0px #808080;
+}
+
+.win98-btn:hover {
+  filter: brightness(1.02);
+}
+
+.win98-btn:active,
+.win98-btn.active {
+  box-shadow: inset 1px 1px 0px #000000,
+              inset -1px -1px 0px #ffffff,
+              inset 2px 2px 0px #808080,
+              inset -2px -2px 0px #dfdfdf;
+  padding: 5px 11px 3px 13px; /* shift 1px down-right */
+}
+
+.win98-btn:focus-visible {
+  outline: 1px dotted #000000;
+  outline-offset: -4px;
+}
+
+/* Titlebars */
+.win98-titlebar {
+  height: 22px;
+  padding: 2px 3px 2px 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--win-navy-gradient);
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  user-select: none;
+}
+
+.win98-titlebar.inactive {
+  background: var(--win-inactive-gradient);
+  color: #d4d0c8;
+}
+
+.win98-titlebar-btn {
+  width: 16px;
+  height: 14px;
+  background-color: var(--win-gray);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: bold;
+  line-height: 1;
+  color: #000000;
+  cursor: pointer;
+  box-shadow: inset 1px 1px 0px #ffffff,
+              inset -1px -1px 0px #000000,
+              inset 2px 2px 0px #dfdfdf,
+              inset -2px -2px 0px #808080;
+  padding: 0;
+}
+
+.win98-titlebar-btn:active {
+  box-shadow: inset 1px 1px 0px #000000,
+              inset -1px -1px 0px #ffffff,
+              inset 2px 2px 0px #808080,
+              inset -2px -2px 0px #dfdfdf;
+  transform: translate(1px, 1px);
+}
+
+/* Desktop Icon */
+.win98-desktop-icon {
+  width: 76px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 4px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid transparent;
+  outline: none;
+}
+
+.win98-desktop-icon .icon-label {
+  color: #ffffff;
+  font-size: 11px;
+  text-align: center;
+  line-height: 1.2;
+  text-shadow: 1px 1px 1px #000000;
+  padding: 2px 4px;
+  word-break: break-word;
+}
+
+.win98-desktop-icon.selected {
+  border: 1px dotted #ffffaa;
+}
+
+.win98-desktop-icon.selected .icon-label {
+  background-color: var(--win-selection);
+  color: #ffffff;
+  text-shadow: none;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #dfdfdf;
+  box-shadow: inset 1px 1px 0px #808080, inset -1px -1px 0px #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--win-gray);
+  box-shadow: inset 1px 1px 0px #ffffff,
+              inset -1px -1px 0px #000000,
+              inset 2px 2px 0px #dfdfdf,
+              inset -2px -2px 0px #808080;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: #a0a0a0;
+}
+
+/* CRT monitor overlay */
+.crt-overlay::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+              linear-gradient(90deg, rgba(255, 0, 0, 0.04), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.04));
+  z-index: 99999;
+  background-size: 100% 3px, 6px 100%;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
