@@ -21,7 +21,7 @@ export const ProjectsWindow: React.FC = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-12 gap-2 min-h-[380px]">
         {/* Left pane: Project Tree / List */}
-        <div className="md:col-span-5 win98-bevel-in bg-white p-2 max-h-[420px] overflow-y-auto">
+        <div className="win98-expand-panel md:col-span-5 win98-bevel-in bg-white p-2 max-h-[420px] overflow-y-auto">
           <div className="text-[11px] font-bold text-[#606060] pb-1 mb-1 border-b border-[#dfdfdf]">
             Daftar Portofolio & Proyek ({projects.length})
           </div>
@@ -61,7 +61,7 @@ export const ProjectsWindow: React.FC = () => {
         </div>
 
         {/* Right pane: Project Detailed Inspection */}
-        <div className="md:col-span-7 win98-bevel-in bg-white p-3 max-h-[420px] overflow-y-auto">
+        <div className="win98-expand-panel md:col-span-7 win98-bevel-in bg-white p-3 max-h-[420px] overflow-y-auto">
           <div className="border-b border-[#dfdfdf] pb-2 mb-3">
             <div className="inline-block px-1.5 py-0.5 text-[10px] font-bold bg-[#000080] text-white mb-1">
               {selectedProject.category}

@@ -10,7 +10,7 @@ export const SkillsWindow: React.FC = () => {
         ℹ️ <strong>Keahlian Teknis & Operasional</strong> dikelompokkan berdasarkan pengalaman nyata web core banking, administrasi sistem Linux, dan sertifikasi database LSP Telematika.
       </div>
 
-      <div className="win98-bevel-in bg-white p-3 max-h-[460px] overflow-y-auto space-y-4">
+      <div className="win98-expand-panel win98-bevel-in bg-white p-3 max-h-[460px] overflow-y-auto space-y-4">
         {skillCategories.map((cat, idx) => (
           <fieldset
             key={idx}

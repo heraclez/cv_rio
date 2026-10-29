@@ -34,7 +34,7 @@ export const CertificatesWindow: React.FC = () => {
         </button>
       </div>
 
-      <div className="win98-bevel-in bg-white p-3 max-h-[460px] overflow-y-auto">
+      <div className="win98-expand-panel win98-bevel-in bg-white p-3 max-h-[460px] overflow-y-auto">
         {viewMode === "details" ? (
           <div>
             {/* Header info */}

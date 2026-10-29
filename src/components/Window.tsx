@@ -122,7 +122,7 @@ export const Window: React.FC<WindowProps> = ({
       ref={windowRef}
       style={containerStyle}
       onClick={onFocus}
-      className={`win98-window-frame flex flex-col ${
+      className={`win98-window-frame flex flex-col ${windowState.isMaximized || isMobile ? "win98-expanded" : ""} ${
         isActive ? "shadow-2xl" : "shadow-md opacity-95"
       }`}
       role="dialog"
@@ -197,7 +197,7 @@ export const Window: React.FC<WindowProps> = ({
       </div>
 
       {/* Window Body (Scrollable Client Area) */}
-      <div className="flex-1 overflow-y-auto bg-[#c0c0c0] p-1 win98-bevel-thin-in">
+      <div className="win98-window-content flex-1 min-h-0 overflow-y-auto bg-[#c0c0c0] p-1 win98-bevel-thin-in">
         {children}
       </div>
     </div>

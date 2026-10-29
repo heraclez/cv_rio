@@ -58,6 +58,17 @@ body {
   padding: 3px;
 }
 
+/* Let content use the available space when a window fills the screen. */
+.win98-expanded .win98-window-content > div {
+  width: 100%;
+  max-width: none;
+}
+
+.win98-expanded .win98-expand-panel {
+  max-height: none;
+  min-height: max(360px, calc(100vh - 200px));
+}
+
 .win98-bevel-out {
   background-color: var(--win-gray);
   box-shadow: inset 1px 1px 0px #ffffff,

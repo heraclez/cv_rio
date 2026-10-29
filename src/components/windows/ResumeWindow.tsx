@@ -34,7 +34,7 @@ export const ResumeWindow: React.FC = () => {
       </div>
 
       {/* Tab Content Panel */}
-      <div className="win98-bevel-in bg-white p-3 min-h-[360px] max-h-[460px] overflow-y-auto">
+      <div className="win98-expand-panel win98-bevel-in bg-white p-3 min-h-[360px] max-h-[460px] overflow-y-auto">
         {activeTab === "experience" ? (
           <div className="space-y-4">
             {experience.map((item, idx) => (
