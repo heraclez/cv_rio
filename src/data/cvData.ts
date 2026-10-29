@@ -108,21 +108,6 @@ export const cvData: CVData = {
   },
   experience: [
     {
-      period: "2022 - Sekarang",
-      company: "PT. Berkah Sukses Internasional",
-      role: "Karyawan / IT Specialist",
-      location: "Indonesia",
-      type: "Full-time",
-      description:
-        "Bertanggung jawab atas pemeliharaan operasional infrastruktur IT, administrasi workstation dan server, serta dukungan sistem teknologi informasi perusahaan.",
-      highlights: [
-        "Memastikan uptime dan stabilitas infrastruktur perangkat keras dan jaringan kerja.",
-        "Mengelola pemeliharaan rutin sistem operasi, backup data, dan penanganan kendala teknis pengguna.",
-        "Menjaga efisiensi alur kerja operasional kantor melalui solusi teknologi yang tepat guna.",
-      ],
-      technologies: ["Linux", "System Administration", "Networking", "Troubleshooting", "Hardware & IT Support"],
-    },
-    {
       period: "2020 - 2022",
       company: "PT. Akselara Raksa Optima",
       role: "Programmer (Web Core Banking Developer)",
@@ -277,7 +262,7 @@ export const cvData: CVData = {
       title: "Enterprise Linux Server & IT Infrastructure",
       category: "System Administration & Support",
       period: "2019 - 2024",
-      organization: "PT. Segoro Kedung Agoeng & PT. Berkah Sukses Internasional",
+      organization: "PT. Segoro Kedung Agoeng",
       role: "IT Specialist",
       description:
         "Penataan dan pemeliharaan lingkungan sistem komputer perusahaan berbasis Linux (Ubuntu & CentOS), jaringan kantor, manajemen workstation, serta dukungan teknis harian.",

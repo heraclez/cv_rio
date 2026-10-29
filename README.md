@@ -35,7 +35,6 @@ Website profil pribadi dan Curriculum Vitae interaktif bertema **Windows 98** un
 Seluruh informasi disusun secara akurat berdasarkan dokumen resmi CV Reunard Rio E.K:
 - **Profil:** Reunard Rio E.K (Nama resmi di sertifikat: Reunnard Rio Erixchon Kakisina).
 - **Pengalaman Kerja:**
-  - `2022 - Sekarang`: **PT. Berkah Sukses Internasional** — Karyawan / IT Specialist.
   - `2020 - 2022`: **PT. Akselara Raksa Optima** — Programmer (Web Core Banking Developer spesialisasi backend).
   - `2019 - 2020`: **PT. Segoro Kedung Agoeng** — IT (IT Support & Administrasi Linux).
 - **Pendidikan:**

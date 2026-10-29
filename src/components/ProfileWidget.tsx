@@ -14,7 +14,7 @@ export const ProfileWidget: React.FC<{ className?: string }> = ({ className = ""
       className={`conky-widget pointer-events-none select-none ${className}`}
     >
       <p className="conky-name">{personal.name}</p>
-      <p className="conky-role">{personal.title}</p>
+      <p className="conky-role">IT Specialist</p>
 
       <hr className="conky-rule" />
 
@@ -27,7 +27,7 @@ export const ProfileWidget: React.FC<{ className?: string }> = ({ className = ""
 
       <p className="conky-label">keahlian</p>
       <ul className="conky-list">
-        {personal.highlightSkills.map((skill) => (
+        {personal.highlightSkills.filter((skill) => skill !== "Web Core Banking (backend)").map((skill) => (
           <li key={skill}>{skill}</li>
         ))}
       </ul>
