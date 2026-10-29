@@ -84,7 +84,7 @@ export const cvData: CVData = {
   personal: {
     name: "Reunard Rio E.K",
     formalName: "Reunnard Rio Erixchon Kakisina",
-    title: "Web Core Banking Developer & IT Specialist",
+    title: "Web Developer & IT Specialist",
     location: "Sidoarjo, Jawa Timur, Indonesia",
     email: "heraclez1210@gmail.com",
     phone: "0851 7968 1152",
@@ -104,7 +104,7 @@ export const cvData: CVData = {
     summaryEn:
       "I have two years of experience as a web core banking developer specializing in the back end. For the past year, I have been working as IT support. I am proficient in using Linux (Ubuntu and CentOS) and have the ability to work effectively in a team.",
     summaryId:
-      "Memiliki pengalaman 2 tahun sebagai Web Core Banking Developer dengan spesialisasi di sisi backend, serta berpengalaman di bidang IT Support. Menguasai sistem operasi Linux (Ubuntu dan CentOS), pengelolaan RDBMS (MySQL & PostgreSQL), dan memiliki kemampuan kerja sama tim yang solid.",
+      "Memiliki pengalaman 2 tahun sebagai Web Developer dengan spesialisasi di sisi backend, serta berpengalaman di bidang IT Support. Menguasai sistem operasi Linux (Ubuntu dan CentOS), pengelolaan RDBMS (MySQL & PostgreSQL), dan memiliki kemampuan kerja sama tim yang solid.",
   },
   experience: [
     {
